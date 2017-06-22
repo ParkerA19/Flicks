@@ -34,4 +34,5 @@
         android:layout_toRightOf="@+id/ivPosterImage"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
