@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorDarkGrey"
     tools:context="com.example.pandrews.flicks.MovieDetailsActivity">
+
 
     <ImageView
         android:id="@+id/ivTrailer"
@@ -21,7 +23,9 @@
         android:layout_height="wrap_content"
         android:text="Movie Title"
         android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/colorWhite"
         android:layout_below="@+id/ivTrailer"
+        android:layout_marginBottom="10dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -30,11 +34,15 @@
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tvTitle"
         android:numStars="5"
-        android:stepSize="0.5" />
+        android:stepSize="0.5"
+        android:layout_below="@+id/tvTitle"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:transformPivotX="90dp"
+        android:transformPivotY="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/tvOverview"
@@ -44,9 +52,29 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/rbVoteAverage"
         android:text="TextView"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorWhite"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <TextView
+        android:id="@+id/tvReleaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/colorWhite"
+        android:layout_above="@+id/tvOverview"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tvRuntime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvOverview"
+        android:textColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
 
 
 </RelativeLayout>

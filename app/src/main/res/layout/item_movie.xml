@@ -21,6 +21,7 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivPosterImage"
         android:text="Movie Title"
+        android:textColor="@color/colorWhite"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -31,6 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Movie overview and synopsis"
         android:layout_below="@+id/tvTitle"
+        android:textColor="@color/colorWhite"
         android:layout_toRightOf="@+id/ivPosterImage"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

@@ -15,6 +15,10 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_trailer);
 
+        // open theintent
+        // pull out the movieId
+        // use the movieId to obtain the videoId (using the getVideos endpoint in the TMDB API)
+
         // temporary test video id --  TODO replace with movie trailer video id
         final String videoId = "tkodtNFpzBA";
 

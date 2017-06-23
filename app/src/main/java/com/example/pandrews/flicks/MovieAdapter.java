@@ -3,6 +3,7 @@ package com.example.pandrews.flicks;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 /**
@@ -107,18 +109,18 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         // track view objects
-        ImageView ivPosterImage;
-        ImageView ivBackdropImage;
-        TextView tvTitle;
-        TextView tvOverview;
+
+        @Nullable@BindView(R.id.ivPosterImage) ImageView ivPosterImage;
+        @Nullable@BindView(R.id.ivBackdropImage) ImageView ivBackdropImage;
+        @BindView(R.id.tvTitle) TextView tvTitle;
+        @BindView(R.id.tvOverview) TextView tvOverview;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            // lookup view objects by id
-            ivPosterImage = (ImageView) itemView.@BindView(R.id.ivPosterImage);
-            ivBackdropImage = (ImageView) itemView.@BindView(R.id.ivBackdropImage);
-            tvOverview = (TextView) itemView.@BindView(R.id.tvOverview);
-            tvTitle = (TextView) itemView.@BindView(R.id.tvTitle);
+
+            // lookup view objects by id with ButterKnife
+            ButterKnife.bind(this, itemView);
+
             // add this as the itemView's OnClickListener
             itemView.setOnClickListener(this);
         }
