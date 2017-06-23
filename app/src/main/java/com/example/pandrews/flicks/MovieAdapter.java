@@ -18,6 +18,7 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 /**
@@ -114,10 +115,10 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
         public ViewHolder(View itemView) {
             super(itemView);
             // lookup view objects by id
-            ivPosterImage = (ImageView) itemView.findViewById(R.id.ivPosterImage);
-            ivBackdropImage = (ImageView) itemView.findViewById(R.id.ivBackdropImage);
-            tvOverview = (TextView) itemView.findViewById(R.id.tvOverview);
-            tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
+            ivPosterImage = (ImageView) itemView.@BindView(R.id.ivPosterImage);
+            ivBackdropImage = (ImageView) itemView.@BindView(R.id.ivBackdropImage);
+            tvOverview = (TextView) itemView.@BindView(R.id.tvOverview);
+            tvTitle = (TextView) itemView.@BindView(R.id.tvTitle);
             // add this as the itemView's OnClickListener
             itemView.setOnClickListener(this);
         }
