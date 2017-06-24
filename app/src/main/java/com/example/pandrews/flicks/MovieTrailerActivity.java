@@ -3,21 +3,31 @@ package com.example.pandrews.flicks;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.pandrews.flicks.models.Movie;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
+import org.parceler.Parcels;
+
 public class MovieTrailerActivity extends YouTubeBaseActivity {
+
+    Movie movie;
+    Integer id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_trailer);
 
-        // open theintent
-        // pull out the movieId
-        // use the movieId to obtain the videoId (using the getVideos endpoint in the TMDB API)
+        // TODO: open the intent
+        movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
+        Log.d("MovieDetailsActivity", String.format( "Showing details for %s", movie.getTitle()));
+
+        // TODO: pull out the movieId
+        id = movie.getId();
+        // TODO: use the movieId to obtain the videoId (using the getVideos endpoint in the TMDB API)
 
         // temporary test video id --  TODO replace with movie trailer video id
         final String videoId = "tkodtNFpzBA";
