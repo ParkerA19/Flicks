@@ -1,5 +1,6 @@
 package com.example.pandrews.flicks;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -25,7 +26,6 @@ public class MovieDetailsActivity extends AppCompatActivity implements View.OnCl
     @BindView(R.id.rbVoteAverage) RatingBar rbVoteAverage;
     @BindView(R.id.ivTrailer) ImageView ivTrailer;
     @BindView(R.id.tvReleaseDate) TextView tvReleaseDate;
-    @BindView(R.id.tvRuntime) TextView tvRuntime;
 
 
     @Override
@@ -42,9 +42,8 @@ public class MovieDetailsActivity extends AppCompatActivity implements View.OnCl
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         tvReleaseDate.setText(movie.getReleaseDate());
-       // tvRuntime.setText(movie.getRuntime());
 
-        ivTrailer.
+       // ivTrailer.
 
         // vote average is 0..10, convert to 0..5 by dividing by 2
         float voteAverage = movie.getVoteAverage().floatValue();
@@ -54,10 +53,12 @@ public class MovieDetailsActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        // intent
-        // -- movieId
-
-        // startActivity(intent)
+        // create intent for the new activity
+        Intent intent = new Intent(this, MovieTrailerActivity.class);
+        // serialize the movie using parceler, use its short name as a key
+        intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+        // show the activity
+        startActivity(intent);
     }
 }
 

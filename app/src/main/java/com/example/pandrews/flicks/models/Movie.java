@@ -19,7 +19,6 @@ public class Movie {
     public String backdropPath;
     public Double voteAverage;
     public String releaseDate;
-  //  public int runtime;
     public Integer id;
 
     // no-arg, empty constructo required for Parceler
@@ -33,7 +32,6 @@ public class Movie {
         backdropPath = object.getString("backdrop_path");
         voteAverage = object.getDouble("vote_average");
         releaseDate = object.getString("release_date");
-      //  runtime = object.getInt("runtime");
         id = object.getInt("id");
 
     }
@@ -69,7 +67,4 @@ public class Movie {
         return releaseDate;
     }
 
-   // public int getRuntime() {
-   //     return runtime;
-   // }
 }
