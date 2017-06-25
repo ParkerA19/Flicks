@@ -3,10 +3,15 @@ package com.example.pandrews.flicks.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
+
+
 
 /**
  * Created by pandrews on 6/21/17.
  */
+
+@Parcel
 
 public class Config {
 
@@ -16,6 +21,10 @@ public class Config {
     String posterSize;
     // the backdrop size to use when fetching images
     String backdropSize;
+    // the size to use when getting the image for details activity
+    String detailsSize;
+
+    public Config() {}
 
     public Config(JSONObject object) throws JSONException {
         JSONObject images = object.getJSONObject("images");
@@ -28,6 +37,8 @@ public class Config {
         // parse the backdrop sizes and use the option at index 1 or w780 as a fallback
         JSONArray backdropSizeOptions = images.getJSONArray("backdrop_sizes");
         backdropSize = backdropSizeOptions.optString(1, "w780");
+        // get the details image size
+        detailsSize = backdropSizeOptions.optString(2, "w1280");
     }
 
     // helper method for creating urls
@@ -45,5 +56,9 @@ public class Config {
 
     public String getBackdropSize() {
         return backdropSize;
+    }
+
+    public String getDetailsSize() {
+        return detailsSize;
     }
 }

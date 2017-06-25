@@ -4,11 +4,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcel;
 
-@Parcel // annotation indicates class is Parcelable
+
 
 /**
  * Created by pandrews on 6/21/17.
  */
+
+@Parcel // annotation indicates class is Parcelable
 
 public class Movie {
 
@@ -21,7 +23,7 @@ public class Movie {
     public String releaseDate;
     public Integer id;
 
-    // no-arg, empty constructo required for Parceler
+    // no-arg, empty constructor required for Parceler
     public Movie() {}
 
     //initialize from JSON data

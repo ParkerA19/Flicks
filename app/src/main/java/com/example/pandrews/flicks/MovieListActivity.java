@@ -73,7 +73,7 @@ public class MovieListActivity extends AppCompatActivity {
         // set the request parameters
         RequestParams params = new RequestParams();
         params.put(API_KEY_PARAM, getString(R.string.api_key)); // API key, always required
-        // execute a GET request expecting a JSON object response
+                    // execute a GET request expecting a JSON object response
         client.get(url, params, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -116,8 +116,8 @@ public class MovieListActivity extends AppCompatActivity {
                     config = new Config(response);
                     Log.i(TAG,
                             String.format("Loaded configuration with imageBaseUrl %s and posterSize %s",
-                                    config.getImageBaseUrl(),
-                                    config.getPosterSize()));
+                    config.getImageBaseUrl(),
+                            config.getPosterSize()));
                     // pass config to adapter
                     adapter.setConfig(config);
                     //get the now playing movie list

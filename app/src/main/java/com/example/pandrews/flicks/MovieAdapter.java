@@ -57,6 +57,7 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
         LayoutInflater inflater = LayoutInflater.from(context);
         // create the view using he item_movie layout
         View movieView = inflater.inflate(R.layout.item_movie, parent, false);
+
         // return a new ViewHolder
         return new ViewHolder(movieView);
     }
@@ -137,6 +138,8 @@ public class MovieAdapter extends  RecyclerView.Adapter<MovieAdapter.ViewHolder>
                 Intent intent = new Intent(context, MovieDetailsActivity.class);
                 // serialize the movie using parceler, use its short name as a key
                 intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+                // add config into the intent
+                intent.putExtra(Config.class.getSimpleName(), Parcels.wrap(config));
                 // show the activity
                 context.startActivity(intent);
             }
