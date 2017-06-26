@@ -110,7 +110,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
             }
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                logError("Failed getting Trialer", throwable, true);
+                logError("Failed getting Trailer", throwable, true);
             }
         });
 
